@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 public class LoginPage extends PageBase {
     public SoftAssert softAssert;
 
-    private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
+	private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
 
     private static By hdrLogin = By.id("logInPanelHeading");
     private static By txtUserName = By.id("txtUsername");
@@ -45,7 +45,8 @@ public class LoginPage extends PageBase {
         getDriver().findElement(txtUserName).sendKeys(userName);
     }
 
-    public static void setPassword(String password) {
+    public static void setPassword(String password)
+    {
         getDriver().findElement(txtPassword).sendKeys(password);
     }
 
