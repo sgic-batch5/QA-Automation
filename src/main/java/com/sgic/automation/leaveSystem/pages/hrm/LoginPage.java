@@ -46,6 +46,7 @@ public class LoginPage extends PageBase {
     }
 
     public static void setPassword(String password) {
+
         getDriver().findElement(txtPassword).sendKeys(password);
     }
 
