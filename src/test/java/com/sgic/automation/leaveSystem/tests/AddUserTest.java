@@ -1,0 +1,47 @@
+package com.sgic.automation.leaveSystem.tests;
+
+import com.sgic.automation.leaveSystem.pages.hrm.AddUser;
+import com.sgic.automation.leaveSystem.pages.hrm.LoginPage;
+import com.sgic.automation.leaveSystem.testData.TestData;
+import com.sgic.automation.leaveSystem.utils.TestBase;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+public class AddUserTest extends TestBase {
+    @Test(testName = "Add Designation", dataProviderClass = TestData.class,dataProvider = "Login")
+    public void first(String username,String pass) {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(LoginPage.isLoginPageDisplay(), "Login Page is not Display");
+        softAssert.assertTrue(LoginPage.isUserNameDisplay(), "Login username is not Display");
+        LoginPage.setUserName("Admin");
+        softAssert.assertTrue(LoginPage.isPasswordDisplay(), "Login Password is not Display");
+        LoginPage.setPassword("admin123");
+        softAssert.assertTrue(LoginPage.isLoginbuttonDisplay(), "Login button is not Display");
+        LoginPage.clickLogin();
+
+        AddUser.clickrecruitment();
+        AddUser.clickrecruitmentAdd();
+
+        softAssert.assertTrue(AddUser.isFirstNameDisplay(), "Adduser Firstname is not Display");
+        AddUser.setRecruitmentAddFirstName("Mithula");
+
+        softAssert.assertTrue(AddUser.isMiddleNameDisplay(), "Adduser Middlename is not Display");
+        AddUser.setRecruitmentAddMiddleName("Mithu");
+
+        softAssert.assertTrue(AddUser.isLastNameDisplay(), "Adduser Lastname is not Display");
+        AddUser.setRecruitmentAddLastName("Selvarajah");
+
+        softAssert.assertTrue(AddUser.isEmailDisplay(), "Adduser Email is not Display");
+        AddUser.setRecruitmentAddEmail("Test@gmail.com");
+
+        softAssert.assertTrue(AddUser.isContactNoDisplay(), "Adduser ContactNo is not Display");
+        AddUser.setRecruitmentAddContactNo("07755555555");
+
+
+
+
+        softAssert.assertAll();
+
+
+    }
+}
