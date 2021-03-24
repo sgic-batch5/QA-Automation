@@ -17,6 +17,7 @@ public class LoginPage extends PageBase {
     private static By btnLogin = By.id("btnLogin");
     private static By alert = By.id("spanMessage");
     private static String commonLinkString = "//a[@href='LINK']";
+    private static By btnRec = By.id("menu_recruitment_viewRecruitmentModule");
     public static boolean isLoginPageDisplay() {
 
         return getDriver().findElement(hdrLogin).isDisplayed();

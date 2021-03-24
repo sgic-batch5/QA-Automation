@@ -17,9 +17,15 @@ public class LoginTest extends TestBase {
         LoginPage.setPassword(pass);
         softAssert.assertTrue(LoginPage.isLoginbuttonDisplay(), "Login button is not Display");
         LoginPage.clickLogin();
-
         softAssert.assertAll();
 
 
     }
-}
+    // public  void second () {
+  //softAssert.assertTrue();
+     }
+
+
+
+
+
