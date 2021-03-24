@@ -47,7 +47,7 @@ public class TestBase extends PageBase {
     }
     @BeforeClass
     public void login(){
-//        DashboardPage.clickManageLeaveMenu();
+ //        DashboardPage.clickManageLeaveMenu();
 //        DashboardPage.clickManageLeaveTypeSubMenu();
     }
     @AfterMethod(alwaysRun=true)
@@ -58,9 +58,9 @@ public class TestBase extends PageBase {
 
 
         }
-        LOGGER.info("Closing Browser");
-        PageBase.closeDriver();
-        LOGGER.info("Browser Closed");
+//       LOGGER.info("Closing Browser");
+//        PageBase.closeDriver();
+//        LOGGER.info("Browser Closed");
 
     }
 
