@@ -16,17 +16,18 @@ public class LoginPage extends PageBase {
     private static By txtPassword = By.id("txtPassword");
     private static By btnLogin = By.id("btnLogin");
     private static By alert = By.id("spanMessage");
-    private static String commonLinkString = "//a[@href='LINK']";
+//    private static String commonLinkString = "//a[@href='LINK']";
+
     public static boolean isLoginPageDisplay() {
 
         return getDriver().findElement(hdrLogin).isDisplayed();
 
 
     }
-    public static void clickLink(String link) {
-        getDriver().findElement(By.xpath(commonLinkString.replace("LINK", link))).click();
-        LOGGER.info("Link " + link + " Clicked");
-    }
+//    public static void clickLink(String link) {
+//        getDriver().findElement(By.xpath(commonLinkString.replace("LINK", link))).click();
+//        LOGGER.info("Link " + link + " Clicked");
+//    }
     public static boolean isUserNameDisplay() {
 
         return getDriver().findElement(txtUserName).isDisplayed();
