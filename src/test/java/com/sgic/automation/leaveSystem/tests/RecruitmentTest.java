@@ -1,27 +1,34 @@
 package com.sgic.automation.leaveSystem.tests;
 
 import com.sgic.automation.leaveSystem.pages.hrm.LoginPage;
+import com.sgic.automation.leaveSystem.pages.hrm.RecruitmentPage;
 import com.sgic.automation.leaveSystem.testData.TestData;
 import com.sgic.automation.leaveSystem.utils.TestBase;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class LoginTest extends TestBase {
+public class RecruitmentTest extends TestBase {
     @Test(testName = "Add Designation", dataProviderClass = TestData.class,dataProvider = "Login")
-    public void first(String username,String pass) {
-        /*softAssert = new SoftAssert();
+    public void first(String username,String pass){
+        softAssert = new SoftAssert();
         softAssert.assertTrue(LoginPage.isLoginPageDisplay(), "Login Page is not Display");
         softAssert.assertTrue(LoginPage.isUserNameDisplay(), "Login username is not Display");
         LoginPage.setUserName("Admin");
         softAssert.assertTrue(LoginPage.isPasswordDisplay(), "Login Password is not Display");
         LoginPage.setPassword("admin123");
         softAssert.assertTrue(LoginPage.isLoginbuttonDisplay(), "Login button is not Display");
-        LoginPage.clickLogin();*/
-        LoginPage.setUserName("Admin");
-        LoginPage.setPassword("admin123");
         LoginPage.clickLogin();
-          softAssert.assertAll();
 
+        RecruitmentPage.clickRecruitment();
+        RecruitmentPage.isRecruitmentPageDisplay();
+        RecruitmentPage.isCandidateNameDisplay();
+        RecruitmentPage.clickCandidates();
+        RecruitmentPage.isCandidateKeyDisplay();
 
+        softAssert.assertAll();
     }
+
+
 }
+
+
