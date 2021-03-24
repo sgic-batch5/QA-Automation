@@ -12,9 +12,10 @@ public class LoginTest extends TestBase {
         softAssert = new SoftAssert();
         softAssert.assertTrue(LoginPage.isLoginPageDisplay(), "Login Page is not Display");
         softAssert.assertTrue(LoginPage.isUserNameDisplay(), "Login username is not Display");
-        LoginPage.setUserName(Admin);
+
+        LoginPage.setUserName(username);
         softAssert.assertTrue(LoginPage.isPasswordDisplay(), "Login Password is not Display");
-        LoginPage.setPassword(admin123);
+        LoginPage.setPassword(pass);
         softAssert.assertTrue(LoginPage.isLoginbuttonDisplay(), "Login button is not Display");
         LoginPage.clickLogin();
 
