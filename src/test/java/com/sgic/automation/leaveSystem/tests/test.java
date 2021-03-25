@@ -12,7 +12,8 @@ public class test extends TestBase {
 
     @Test(testName = "Add Designation")
     public void first() {
-        softAssert = new SoftAssert();
+
+      softAssert = new SoftAssert();
         softAssert.assertTrue(LoginPage.isLoginPageDisplay(), "Login Page is not Display");
         softAssert.assertTrue(LoginPage.isUserNameDisplay(), "Login username is not Display");
         LoginPage.setUserName("Admin");
@@ -20,6 +21,10 @@ public class test extends TestBase {
         LoginPage.setPassword("Admin123");
         softAssert.assertTrue(LoginPage.isLoginbuttonDisplay(), "Login button is not Display");
         LoginPage.clickLogin();
+
+//        LoginPage.setUserName("Admin");
+//        LoginPage.setPassword("admin");
+//        LoginPage.clickLogin();
 
         softAssert.assertAll();
 

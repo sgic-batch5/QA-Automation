@@ -58,10 +58,11 @@ public class TestBase extends PageBase {
 
 
         }
+        /*
         LOGGER.info("Closing Browser");
         PageBase.closeDriver();
         LOGGER.info("Browser Closed");
-
+*/
     }
 
 
