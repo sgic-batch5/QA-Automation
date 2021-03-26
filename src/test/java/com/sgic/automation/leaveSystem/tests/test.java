@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class test extends TestBase {
-
     @Test(testName = "Add Designation")
     public void first() {
         softAssert = new SoftAssert();
@@ -17,7 +16,7 @@ public class test extends TestBase {
         softAssert.assertTrue(LoginPage.isUserNameDisplay(), "Login username is not Display");
         LoginPage.setUserName("Admin");
         softAssert.assertTrue(LoginPage.isPasswordDisplay(), "Login Password is not Display");
-        LoginPage.setPassword("Admin123");
+        LoginPage.setPassword("admin123");
         softAssert.assertTrue(LoginPage.isLoginbuttonDisplay(), "Login button is not Display");
         LoginPage.clickLogin();
 
@@ -25,4 +24,9 @@ public class test extends TestBase {
 
 
     }
+
+
+
+
 }
+
