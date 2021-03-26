@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 
 public class LoginPage extends PageBase {
+
     public SoftAssert softAssert;
 
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
@@ -17,12 +18,12 @@ public class LoginPage extends PageBase {
     private static By btnLogin = By.id("btnLogin");
     private static By alert = By.id("spanMessage");
     private static String commonLinkString = "//a[@href='LINK']";
+
     public static boolean isLoginPageDisplay() {
 
         return getDriver().findElement(hdrLogin).isDisplayed();
-
-
     }
+
     public static void clickLink(String link) {
         getDriver().findElement(By.xpath(commonLinkString.replace("LINK", link))).click();
         LOGGER.info("Link " + link + " Clicked");
@@ -59,5 +60,11 @@ public class LoginPage extends PageBase {
 
     public static String getLoginAlert() {
         return  getDriver().findElement(alert).getText();
+    }
+
+    public static void performLogin(String userName, String passWord) {
+        setUserName(userName);
+       setPassword(passWord);
+        clickLogin();
     }
 }

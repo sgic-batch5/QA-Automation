@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class PageBase {
+
     public static WebDriver driver;
         private static String baseUrl="https://opensource-demo.orangehrmlive.com/";
         private static String driverPath="src"+ File.separator+"test"+ File.separator+"resources"+ File.separator+"drivers"+File.separator;
@@ -24,14 +25,17 @@ public class PageBase {
             case Constants.CHROME:
                 if(osType.equals(Constants.UBUNTU)) {
                     System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
-                } else
+                } else {
                     System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
+                }
                 driver = new ChromeDriver();
                 break;
             case Constants.FIREFOX:
-                if(osType.equals(Constants.UBUNTU))
+                if(osType.equals(Constants.UBUNTU)) {
                     System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver");
-                else System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
+                } else {
+                    System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
+                }
                 driver = new FirefoxDriver();
                 break;
         }
@@ -51,7 +55,6 @@ public class PageBase {
      * */
     public static void closeDriver()
     {
-
         getDriver().quit();
     }
     /** * Refresh web driver instances */
