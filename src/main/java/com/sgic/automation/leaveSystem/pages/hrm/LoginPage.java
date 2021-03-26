@@ -17,6 +17,10 @@ public class LoginPage extends PageBase {
     private static By btnLogin = By.id("btnLogin");
     private static By alert = By.id("spanMessage");
     private static String commonLinkString = "//a[@href='LINK']";
+
+    private static By btnAdminLogin = By.id("menu_admin_viewAdminModule");
+
+
     public static boolean isLoginPageDisplay() {
 
         return getDriver().findElement(hdrLogin).isDisplayed();
@@ -51,6 +55,10 @@ public class LoginPage extends PageBase {
 
     public static void clickLogin() {
         getDriver().findElement(btnLogin).click();
+    }
+
+    public static void clickAdminLogin() {
+        getDriver().findElement(btnAdminLogin).click();
     }
 
     public static boolean isLoginAlertDisplay() {
